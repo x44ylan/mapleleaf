@@ -1,0 +1,27 @@
+# Re-creatable development files
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+build/
+dist/
+
+# Local account history and screenshots. Preserve these in local backups.
+data/
+runs/
+work/
+
+# Credentials are never project assets.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Operator profiles, templates, plans and knowledge exports
+/config/*
+!/config/*.example.json
+/anchors/
+/quests/
+/knowledge/

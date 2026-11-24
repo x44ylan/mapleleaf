@@ -1,0 +1,21 @@
+{
+  "id": "open-dungeons-shortcut",
+  "enabled": true,
+  "execution_enabled": true,
+  "allow_live_navigation": true,
+  "reviewed_navigation_keys": [["HOME", "F2"]],
+  "steps": [
+    {
+      "state": "HOME",
+      "action": {"type": "key", "key": "F2"},
+      "success_state": "DUNGEONS",
+      "success_anchors": ["dungeons_header", "dungeons_reset_label", "elite_tile"],
+      "reason": "Open Dungeons using the user-confirmed F2 shortcut."
+    },
+    {
+      "state": "DUNGEONS",
+      "action": {"type": "stop"},
+      "reason": "Dungeons is open. Do not toggle the menu or enter an activity."
+    }
+  ]
+}

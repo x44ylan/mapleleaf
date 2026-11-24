@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mapleleaf-supervisor"
+version = "0.1.0"
+description = "Observe-first MapleStory M daily-content supervisor"
+requires-python = ">=3.12"
+dependencies = ["opencv-python-headless==5.0.0.93", "numpy==2.5.3", "Pillow==12.3.0", "PyYAML==6.0.3"]
+
+[project.optional-dependencies]
+dev = ["pytest==9.1.1"]
+
+[project.scripts]
+mapleleaf = "mapleleaf.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

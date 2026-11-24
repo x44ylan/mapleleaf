@@ -1,0 +1,53 @@
+{
+  "id": "inspect-preset-route",
+  "enabled": true,
+  "execution_enabled": true,
+  "allow_live_navigation": true,
+  "steps": [
+    {
+      "state": "ELITE_INFO",
+      "action": {
+        "type": "click_anchor",
+        "target": "screen_close"
+      },
+      "success_state": "MAIN_MENU",
+      "reason": "Close Elite information without entering."
+    },
+    {
+      "state": "MAIN_MENU",
+      "action": {
+        "type": "click_anchor",
+        "target": "menu_close"
+      },
+      "success_state": "HOME",
+      "reason": "Close the main menu to inspect the global preset button on the main screen."
+    },
+    {
+      "state": "HOME",
+      "action": {
+        "type": "click_anchor",
+        "target": "main_menu"
+      },
+      "success_state": "MAIN_MENU",
+      "reason": "Open the menu to inspect global preset settings."
+    },
+    {
+      "state": "CHARACTER_INFO",
+      "action": {
+        "type": "click_anchor",
+        "target": "screen_close"
+      },
+      "success_state": "MAIN_MENU",
+      "reason": "Close the stats page without changing settings."
+    },
+    {
+      "state": "CHANGE_CHARACTER",
+      "action": {
+        "type": "click_anchor",
+        "target": "change_character_close"
+      },
+      "success_state": "MAIN_MENU",
+      "reason": "Dismiss character selection without switching characters."
+    }
+  ]
+}

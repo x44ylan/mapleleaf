@@ -1,0 +1,43 @@
+{
+  "id": "menu-exploration",
+  "enabled": true,
+  "execution_enabled": true,
+  "allow_live_navigation": true,
+  "description": "One operator-supervised menu-navigation action only.",
+  "steps": [
+    {
+      "state": "HOME",
+      "action": {
+        "type": "click_anchor",
+        "target": "main_menu"
+      },
+      "success_state": "MAIN_MENU",
+      "reason": "Open the main menu to inspect daily and preset routes."
+    },
+    {
+      "state": "MAIN_MENU",
+      "action": {
+        "type": "click_anchor",
+        "target": "menu_dungeons"
+      },
+      "success_state": "DUNGEONS",
+      "reason": "Inspect the dungeon catalogue without entering an activity."
+    },
+    {
+      "state": "DUNGEONS",
+      "action": {
+        "type": "click_anchor",
+        "target": "elite_tile"
+      },
+      "success_state": "ELITE_INFO",
+      "reason": "Inspect Elite Dungeon entry information; do not enter or spend a ticket."
+    },
+    {
+      "state": "ELITE_INFO",
+      "action": {
+        "type": "stop"
+      },
+      "reason": "Entry inspection is complete. This navigation-only workflow does not spend tickets; check fresh character-specific availability."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "id": "quickslot-page-navigation",
+  "enabled": true,
+  "execution_enabled": true,
+  "allow_live_navigation": true,
+  "reviewed_navigation_keys": [
+    [
+      "HOME",
+      "BACKTICK"
+    ],
+    [
+      "HOME",
+      "BACKSLASH"
+    ]
+  ],
+  "steps": [
+    {
+      "state": "HOME",
+      "when": {
+        "quickslot_page": 1
+      },
+      "action": {
+        "type": "key",
+        "key": "BACKSLASH"
+      },
+      "success_state": "HOME",
+      "success_facts": {
+        "quickslot_page": 4
+      },
+      "reason": "Rotate one page toward the settings page and verify the orange page indicator."
+    },
+    {
+      "state": "HOME",
+      "when": {
+        "quickslot_page": 2
+      },
+      "action": {
+        "type": "key",
+        "key": "BACKSLASH"
+      },
+      "success_state": "HOME",
+      "success_facts": {
+        "quickslot_page": 1
+      },
+      "reason": "Rotate one page toward the settings page and verify the orange page indicator."
+    },
+    {
+      "state": "HOME",
+      "when": {
+        "quickslot_page": 3
+      },
+      "action": {
+        "type": "key",
+        "key": "BACKSLASH"
+      },
+      "success_state": "HOME",
+      "success_facts": {
+        "quickslot_page": 2
+      },
+      "reason": "Rotate one page toward the settings page and verify the orange page indicator."
+    },
+    {
+      "state": "HOME",
+      "when": {
+        "quickslot_page": 4,
+        "global_preset_number": null
+      },
+      "action": {
+        "type": "click_anchor",
+        "target": "global_preset_shortcut"
+      },
+      "reason": "Open the user-identified global preset selector from shortcut page 4.",
+      "success_state": "GLOBAL_PRESET_PANEL"
+    },
+    {
+      "state": "GLOBAL_PRESET_PANEL",
+      "action": {
+        "type": "click_anchor",
+        "target": "preset_1_option"
+      },
+      "success_state": "GLOBAL_PRESET_1",
+      "reason": "Apply the user-required global Preset 1, then inspect the displayed preset.",
+      "success_anchors": [
+        "global_preset_1_active"
+      ]
+    },
+    {
+      "state": "GLOBAL_PRESET_1",
+      "action": {
+        "type": "click_anchor",
+        "target": "preset_panel_open"
+      },
+      "success_state": "HOME",
+      "reason": "Close the verified Preset 1 selector and return home."
+    },
+    {
+      "state": "HOME",
+      "when": {
+        "quickslot_page": 4,
+        "global_preset_number": 1
+      },
+      "action": {
+        "type": "stop"
+      },
+      "reason": "Global Preset 1 is visibly verified. Preset preparation is complete; no further preset input."
+    }
+  ]
+}

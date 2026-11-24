@@ -1,0 +1,35 @@
+{
+  "id": "inspect-keyboard",
+  "enabled": true,
+  "execution_enabled": true,
+  "allow_live_navigation": true,
+  "steps": [
+    {
+      "state": "HOME",
+      "action": {
+        "type": "click_anchor",
+        "target": "dungeons_shortcut"
+      },
+      "success_state": "DUNGEONS",
+      "reason": "Open the catalogue via its visible shortcut."
+    },
+    {
+      "state": "DUNGEONS",
+      "action": {
+        "type": "click_anchor",
+        "target": "screen_close"
+      },
+      "success_state": "HOME",
+      "reason": "Return home and move the pointer away from the menu icon."
+    },
+    {
+      "state": "MAIN_MENU",
+      "action": {
+        "type": "click_anchor",
+        "target": "menu_keyboard"
+      },
+      "success_state": "KEYBOARD_SETTINGS",
+      "reason": "Inspect existing PC bindings without editing them."
+    }
+  ]
+}
